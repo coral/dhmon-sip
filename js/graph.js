@@ -1,49 +1,46 @@
 var dialplan;
 var socket;
 
-$( document ).ready(function() {
-
+$(document).ready(function() {
 
     dialplan.get(render)
     socket = io("https://tele.event.dreamhack.se");
 
-
 });
 
-var render = function(dialplan)
-{
+var render = function(dialplan) {
 
     dialplan = dialplan.phones;
 
     s = new sigma({
-    renderer: {
-      container: document.getElementById('graph-container'),
-      type: 'webgl'
-    },
-    settings: {
-      autoRescale: false,
-      mouseEnabled: false,
-      touchEnabled: false,
-      defaultLabelSize: 10,
-      defaultEdgeColor: '#FF0000',
-      defaultNodeColor: '#FF6600',
-      defaultLabelColor: '#FFFFFF',
-      edgeColor: 'default',
-      minArrowSize: 10,
-      minEdgeSize: 1,
-      maxEdgeSize: 30
-    }
-  });
+        renderer: {
+            container: document.getElementById('graph-container'),
+            type: 'webgl'
+        },
+        settings: {
+            autoRescale: false,
+            mouseEnabled: false,
+            touchEnabled: false,
+            defaultLabelSize: 10,
+            defaultEdgeColor: '#FF0000',
+            defaultNodeColor: '#FF6600',
+            defaultLabelColor: '#FFFFFF',
+            edgeColor: 'default',
+            minArrowSize: 10,
+            minEdgeSize: 1,
+            maxEdgeSize: 30
+        }
+    });
 
     var nodes = dialplan.length;
 
     _.forEach(dialplan, function(n, key) {
-        
+
         s.graph.addNode({
-            id: String(n.extension) ,
+            id: String(n.extension),
             label: n.name.toUpperCase(),
             size: 10,
-            x: (150 * Math.cos(Math.PI * 2 * key / nodes - Math.PI / 2))-30,
+            x: (150 * Math.cos(Math.PI * 2 * key / nodes - Math.PI / 2)) - 30,
             y: 80 * Math.sin(Math.PI * 2 * key / nodes - Math.PI / 2),
             dX: 0,
             dY: 0,
@@ -53,10 +50,9 @@ var render = function(dialplan)
     });
 
 
-    socket.on('call', function (data) {
+    socket.on('call', function(data) {
         console.log(data);
-        s.graph.addEdge(
-        {
+        s.graph.addEdge({
             source: String(data.source),
             target: String(data.target),
             id: String(data.id),
@@ -67,19 +63,13 @@ var render = function(dialplan)
         s.refresh();
     });
 
-    socket.on('hangup', function (data) {
+    socket.on('hangup', function(data) {
         s.graph.dropEdge(data);
         s.refresh();
 
     });
 
-s.refresh();
+    s.refresh();
 
-    // s.graph.startForceAtlas2(
-    // {
-    //     outboundAttractionDistribution: true,
-    //     adjustSizes: true
-    // });
-      
 
 }
