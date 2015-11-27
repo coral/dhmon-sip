@@ -22,7 +22,7 @@ var render = function(dialplan) {
             mouseEnabled: false,
             touchEnabled: false,
             defaultLabelSize: 10,
-            defaultEdgeColor: '#FF0000',
+            defaultEdgeColor: '#FFFFFF',
             defaultNodeColor: '#FF6600',
             defaultLabelColor: '#FFFFFF',
             edgeColor: 'default',
