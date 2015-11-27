@@ -40,8 +40,8 @@ var render = function(dialplan) {
             id: String(n.extension),
             label: n.name.toUpperCase(),
             size: 10,
-            x: (150 * Math.cos(Math.PI * 2 * key / nodes - Math.PI / 2)) - 30,
-            y: 80 * Math.sin(Math.PI * 2 * key / nodes - Math.PI / 2),
+            x: (160 * Math.cos(Math.PI * 2 * key / nodes - Math.PI / 2))-20,
+            y: 90 * Math.sin(Math.PI * 2 * key / nodes - Math.PI / 2),
             dX: 0,
             dY: 0,
             type: 'goo'

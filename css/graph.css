@@ -1,11 +1,10 @@
 body {
-    width: 400px;
-    height: 200px;
+    width: 450px;
+    height: 280px;
 }
 
  #graph-container {
-      background: #fff;
-      height: 200px;
+        height: 200px;
       max-width: 400px;
       margin: auto;
       position: relative;
