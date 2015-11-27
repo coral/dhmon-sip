@@ -1,0 +1,25 @@
+{
+  "name": "dhmon-sip",
+  "version": "0.0.0",
+  "authors": [
+    "coral <jonas@jonasbengtson.se>"
+  ],
+  "description": "KEK",
+  "main": "index.html",
+  "keywords": [
+    "wat"
+  ],
+  "license": "DTFYW",
+  "homepage": "https://github.com/coral/klausroute",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.1"
+  }
+}

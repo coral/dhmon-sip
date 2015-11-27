@@ -1,0 +1,13 @@
+body {
+    width: 400px;
+    height: 200px;
+}
+
+ #graph-container {
+      background: #fff;
+      height: 200px;
+      max-width: 400px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
