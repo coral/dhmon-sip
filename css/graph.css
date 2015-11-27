@@ -4,9 +4,9 @@ body {
 }
 
  #graph-container {
-        height: 200px;
-      max-width: 400px;
-      margin: auto;
-      position: relative;
-      overflow: hidden;
-    }
+    height: 280px;
+    max-width: 400px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
